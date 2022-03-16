@@ -1,4 +1,4 @@
-
+import Featured from './Featured';
 import Footer from "./Footer";
 import Navbar from "./Navbar";
 
