@@ -10,7 +10,7 @@ import {
 import axios from "axios";
 import { useRouter } from "next/router";
 import { reset } from "../redux/cartSlice";
-import OrderDetail from "../component/OrderDetail";
+import OrderDetail from "../components/OrderDetail";
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
@@ -129,14 +129,14 @@ const Cart = () => {
                   </span>
                 </td>
                 <td>
-                  <span className={styles.price}>$ {product.price}</span>
+                  <span className={styles.price}>${product.price}</span>
                 </td>
                 <td>
                   <span className={styles.quantity}>{product.quantity}</span>
                 </td>
                 <td>
                   <span className={styles.total}>
-                    $ {product.price * product.quantity}
+                    ${product.price * product.quantity}
                   </span>
                 </td>
               </tr>
@@ -148,13 +148,13 @@ const Cart = () => {
         <div className={styles.wrapper}>
           <h2 className={styles.title}>CART TOTAL</h2>
           <div className={styles.totalText}>
-            <b className={styles.totalTextTitle}>Subtotal:</b>$ {cart.total}
+            <b className={styles.totalTextTitle}>Subtotal:</b>${cart.total}
           </div>
           <div className={styles.totalText}>
             <b className={styles.totalTextTitle}>Discount:</b>$0.00
           </div>
           <div className={styles.totalText}>
-            <b className={styles.totalTextTitle}>Total:</b>$ {cart.total}
+            <b className={styles.totalTextTitle}>Total:</b>${cart.total}
           </div>
           {open ? (
             <div className={styles.paymentMethods}>
@@ -166,8 +166,8 @@ const Cart = () => {
               </button>
               <PayPalScriptProvider
                 options={{
-                  "client-id":
-                  "AUjrSPB6X5nahnLYaU_yswhPpP41Kr4RQnlrDJqaxWDCqCZgmKSzrGFLXl7ajex6GhIBi9m2T4yd11GS",
+                  "client-id":             
+ "AUjrSPB6X5nahnLYaU_yswhPpP41Kr4RQnlrDJqaxWDCqCZgmKSzrGFLXl7ajex6GhIBi9m2T4yd11GS",
                   components: "buttons",
                   currency: "USD",
                   "disable-funding": "credit,card,p24",
