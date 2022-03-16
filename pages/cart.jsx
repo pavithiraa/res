@@ -10,7 +10,7 @@ import {
 import axios from "axios";
 import { useRouter } from "next/router";
 import { reset } from "../redux/cartSlice";
-import OrderDetail from "../components/OrderDetail";
+import OrderDetail from "../component/OrderDetail";
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
@@ -77,6 +77,7 @@ const Cart = () => {
           }}
           onApprove={function (data, actions) {
             return actions.order.capture().then(function (details) {
+              console.log(details)
               const shipping = details.purchase_units[0].shipping;
               createOrder({
                 customer: shipping.name.full_name,
@@ -166,8 +167,7 @@ const Cart = () => {
               </button>
               <PayPalScriptProvider
                 options={{
-                  "client-id":             
- "AUjrSPB6X5nahnLYaU_yswhPpP41Kr4RQnlrDJqaxWDCqCZgmKSzrGFLXl7ajex6GhIBi9m2T4yd11GS",
+                  "client-id": "AUjrSPB6X5nahnLYaU_yswhPpP41Kr4RQnlrDJqaxWDCqCZgmKSzrGFLXl7ajex6GhIBi9m2T4yd11GS",
                   components: "buttons",
                   currency: "USD",
                   "disable-funding": "credit,card,p24",
