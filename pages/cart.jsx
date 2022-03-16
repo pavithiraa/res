@@ -43,7 +43,8 @@ const Cart = () => {
     useEffect(() => {
       dispatch({
         type: "resetOptions",
-        value: { ...options,
+        value: {
+          ...options,
           currency: currency,
         },
       });
