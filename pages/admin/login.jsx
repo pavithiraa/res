@@ -27,6 +27,7 @@ const Login = () => {
         <h1>Admin Dashboard</h1>
         <input
           placeholder="username"
+          type="text"
           className={styles.input}
           onChange={(e) => setUsername(e.target.value)}
         />
